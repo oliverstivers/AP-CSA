@@ -39,7 +39,7 @@ public class Pythagoras {
 			}
 			
 		}
-		
+		in.close();
 
 	}
 
