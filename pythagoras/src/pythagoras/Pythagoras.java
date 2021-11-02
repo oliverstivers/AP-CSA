@@ -8,7 +8,7 @@ public class Pythagoras {
 		Scanner in = new Scanner(System.in);
 		String choice  = "";
 		
-		while(!choice.equals("L") || !choice.equals("H")) {
+		while(!(choice.equals("H") && choice.equals("L"))) {
 			System.out.println("Leg and leg (l) or hypotenuse and leg (h)?");
 			choice = in.nextLine().toUpperCase();
 			if(choice.equals("L")) {
