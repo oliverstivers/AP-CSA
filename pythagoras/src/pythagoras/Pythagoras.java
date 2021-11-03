@@ -9,7 +9,7 @@ public class Pythagoras {
 		String choice  = "";
 		
 		while(!(choice.equals("H") && choice.equals("L"))) {
-			System.out.println("Leg and leg (l) or hypotenuse and leg (h)?");
+			System.out.println("Would you like to enter two legs and find the hypotenuse (l), or enter a leg and a hypotenuse and find the leg length (h)?");
 			choice = in.nextLine().toUpperCase();
 			if(choice.equals("L")) {
 				System.out.println("Enter the leg lengths");
