@@ -20,19 +20,28 @@ public class Pythagoras {
 				break;
 			}
 			else if(choice.equals("H")) {
-				System.out.println("Enter the leg and hypotenuse");
-				double length1 = in.nextDouble();
-				double length2 = in.nextDouble();
-				if(length1 > length2) {
-					TriangleFinder leg = new TriangleFinder(length2, length1);
-					System.out.println("The missing leg is " + leg.findLeg());
-					break;
+				double length1 = 0;
+				double length2 = 0;
+				
+				
+				
+				while(length1 == length2) {
+					System.out.println("Enter the leg and hypotenuse");
+					length1 = in.nextDouble();
+					length2 = in.nextDouble();
+					if(length1 > length2) {
+						TriangleFinder leg = new TriangleFinder(length2, length1);
+						System.out.println("The missing leg is " + leg.findLeg());
+						break;
+					}
+					else if(length2 > length1) {
+						TriangleFinder leg = new TriangleFinder(length1, length2);
+						System.out.println("The missing leg is " + leg.findLeg());
+						break;
+					}
+					System.out.println("Hypotenuse and leg cannot be equal, please try again");
 				}
-				else if(length2 > length1) {
-					TriangleFinder leg = new TriangleFinder(length1, length2);
-					System.out.println("The missing leg is " + leg.findLeg());
-					break;
-				}
+				break;
 			}
 			else {
 				System.out.println("Symbol " + choice + " not recognized");
