@@ -49,7 +49,7 @@ public class Pythagoras {
 			
 			
 		}
-		System.out.println("Program complete");
+		
 		in.close();
 
 	}
