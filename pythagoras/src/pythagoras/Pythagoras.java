@@ -9,7 +9,7 @@ public class Pythagoras {
 		String choice  = "";
 		
 		while(!(choice.equals("H") && choice.equals("L"))) {
-			System.out.println("Would you like to enter two legs and find the hypotenuse (l), or enter a leg and a hypotenuse and find the leg length (h)?");
+			System.out.println("Would you like to enter two legs and find the hypotenuse (l), or enter a leg and a hypotenuse and find the other leg (h)?");
 			choice = in.nextLine().toUpperCase();
 			if(choice.equals("L")) {
 				System.out.println("Enter the leg lengths");
@@ -39,15 +39,17 @@ public class Pythagoras {
 						System.out.println("The missing leg is " + leg.findLeg());
 						break;
 					}
-					System.out.println("Hypotenuse and leg cannot be equal, please try again");
+					System.out.println("Hypotenuse and leg cannot be equal, please try again:");
 				}
 				break;
 			}
 			else {
-				System.out.println("Symbol " + choice + " not recognized");
+				System.out.println("Symbol " + choice + " not recognized, please try again: ");
 			}
 			
+			
 		}
+		System.out.println("Program complete");
 		in.close();
 
 	}
