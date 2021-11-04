@@ -5,6 +5,11 @@ public class Pythagoras {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
 		String choice  = "";
+		//hello there
+		/**
+		 * javadoc comment
+		 */
+		
 		
 		while(!(choice.equals("H") && choice.equals("L"))) {
 			System.out.println("Would you like to enter two legs and find the hypotenuse (l), or enter a leg and a hypotenuse and find the other leg (h)?");
