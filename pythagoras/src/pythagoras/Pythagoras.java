@@ -19,8 +19,8 @@ public class Pythagoras {
 				System.out.println("Enter the leg lengths");
 				double length1 = in.nextDouble();
 				double length2 = in.nextDouble();
-				TriangleFinder hyp = new TriangleFinder(length1, length2);
-				System.out.println("The hypotenuse is " + hyp.findHypotenuse());
+				
+				System.out.println("The hypotenuse is " + TriangleFinder.findHypotenuse(length1, length2));
 				break;
 			}
 			else if(choice.equals("H")) {
@@ -34,13 +34,13 @@ public class Pythagoras {
 					length1 = in.nextDouble();
 					length2 = in.nextDouble();
 					if(length1 > length2) {
-						TriangleFinder leg = new TriangleFinder(length2, length1);
-						System.out.println("The missing leg is " + leg.findLeg());
+						
+						System.out.println("The missing leg is " + TriangleFinder.findLeg(length2, length1));
 						break;
 					}
 					else if(length2 > length1) {
-						TriangleFinder leg = new TriangleFinder(length1, length2);
-						System.out.println("The missing leg is " + leg.findLeg());
+						
+						System.out.println("The missing leg is " + TriangleFinder.findLeg(length1, length2));
 						break;
 					}
 					System.out.println("Hypotenuse and leg cannot be equal, please try again:");
