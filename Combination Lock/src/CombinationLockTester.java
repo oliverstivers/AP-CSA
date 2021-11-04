@@ -6,14 +6,17 @@ public class CombinationLockTester {
 		CombinationLock combo = new CombinationLock("hell");
 		System.out.println("Enter your guess: ");
 		String guess = in.nextLine();
+		System.out.println(guess);
 		while(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+")) {
 			System.out.println("Enter your guess: ");
 			guess = in.nextLine();
+			System.out.println(guess);
 			if(!(combo.getClue(guess).contains("*") && combo.getClue(guess).contains("+"))){
 				break;
 			}
 			
 		}
-	}
+		System.out.println("Guess is correct!");
+		}
 
 }
