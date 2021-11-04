@@ -13,7 +13,7 @@ public class CombinationLockTester {
 			System.out.println("Enter your guess: ");
 			guess = in.nextLine();
             System.out.println(combo.getClue(guess));
-			if(!(combo.getClue(guess).contains("*") && combo.getClue(guess).contains("+"))){
+			if(!(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+")){
 				break;
 			}
 			
