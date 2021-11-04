@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//comment
 public class CombinationLockTester {
 
 	public static void main(String[] args) {
