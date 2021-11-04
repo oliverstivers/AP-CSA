@@ -9,7 +9,10 @@ public class CombinationLockTester {
 		while(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+")) {
 			System.out.println("Enter your guess: ");
 			guess = in.nextLine();
-			if(combo.)
+			if(!(combo.getClue(guess).contains("*") && combo.getClue(guess).contains("+"))){
+				break;
+			}
+			
 		}
 	}
 
