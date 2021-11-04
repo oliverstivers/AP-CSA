@@ -19,6 +19,8 @@ public class CombinationLockTester {
 			
 		}
 		System.out.println("Guess is correct!");
+        in.close();
 	}
+
 
 }
