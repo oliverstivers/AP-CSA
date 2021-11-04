@@ -7,11 +7,13 @@ public class CombinationLockTester {
 		Scanner in = new Scanner(System.in);
 		CombinationLock combo = new CombinationLock("hell");
 		System.out.println("Enter your guess: ");
-		String guess = in.nextLine();
+        String guess = in.nextLine();
+        System.out.println(combo.getClue(guess));
 		System.out.println(guess);
 		while(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+")) {
 			System.out.println("Enter your guess: ");
 			guess = in.nextLine();
+            System.out.println(combo.getClue(guess));
 			System.out.println(guess);
 			if(!(combo.getClue(guess).contains("*") && combo.getClue(guess).contains("+"))){
 				break;
