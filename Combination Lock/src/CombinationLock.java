@@ -1,4 +1,4 @@
-
+//comment added
 public class CombinationLock {
 	private String combo;
 	public CombinationLock(String combo) {
