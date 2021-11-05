@@ -19,4 +19,7 @@ public class CombinationLock {
 		}
 		return  newString;
 	}
+    public String getCombo(){
+        return combo;
+    }
 }
