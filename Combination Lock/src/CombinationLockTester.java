@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.lang.Math;
+
 public class CombinationLockTester 
 {
 
@@ -17,8 +17,9 @@ public class CombinationLockTester
                 String word1 = scR.next();
                 words.add(word1);
             }
-            
+            scR.close();
         }
+        
 		Scanner in = new Scanner(System.in);
         int guessCounter = 0;
         
@@ -71,6 +72,7 @@ public class CombinationLockTester
         
         
 	}
+    
 
 
 }
