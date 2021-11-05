@@ -24,7 +24,7 @@ public class CombinationLockTester
         int guessCounter = 0;
         
 		CombinationLock combo = new CombinationLock(words.get(WordGiver.giveRandom()));
-        System.out.println(combo.getCombo());
+        
 		System.out.println("Enter your guess, or type 'quit' to cancel: ");
         String guess = in.nextLine();
         guessCounter ++;
