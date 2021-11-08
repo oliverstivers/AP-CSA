@@ -30,7 +30,7 @@ public class CombinationLockTester
         guessCounter ++;
         while(guess.length() != 4 && !guess.equals("quit"))
         {
-            System.out.println("Guess needs to be 4 letters, please try again: ");
+            System.out.println("Guess must be 4 letters, please try again: ");
             guess = in.nextLine();
         }
         
@@ -39,12 +39,12 @@ public class CombinationLockTester
         
 			while(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+") && !guess.equals("quit"))
             {
-			System.out.println("Incorrect, try again, or type 'quit' to quit: ");
+			System.out.println("Guess is incorrect, please try again (quit to end): ");
 			guess = in.nextLine();
             guessCounter++;
             while(guess.length() != 4 && !guess.equals("quit"))
             {
-                System.out.println("Guess needs to be 4 letters, please try again: ");
+                System.out.println("Guess must be 4 letters, please try again: ");
                 guess = in.nextLine();
                 
             }
