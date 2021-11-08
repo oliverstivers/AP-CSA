@@ -19,7 +19,7 @@ public class CombinationLockTester
             }
             scR.close();
         }
-        //comment
+        
 		Scanner in = new Scanner(System.in);
         int guessCounter = 0;
         
