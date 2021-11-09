@@ -19,11 +19,15 @@ public class CombinationLockTester
             }
             scR.close();
         }
+        String[] wordList = new String[words.size()];
+        for(int i = 0; i < words.size(); i++){
+            wordList[i] = words.get(i);
+        }
         
 		Scanner in = new Scanner(System.in);
         int guessCounter = 0;
         
-		CombinationLock combo = new CombinationLock(words.get(WordGiver.giveRandom()));
+		CombinationLock combo = new CombinationLock(wordList[WordGiver.giveRandom(wordList)]);
         
 		System.out.println("Enter your guess, or type 'quit' to cancel: ");
         String guess = in.nextLine();

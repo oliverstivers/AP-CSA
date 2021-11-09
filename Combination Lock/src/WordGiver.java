@@ -1,5 +1,5 @@
 public class WordGiver {
-    public static int giveRandom() {
-        return (int) (Math.random() * 398);
+    public static int giveRandom(String[] wordList) {
+        return (int)(Math.random() * wordList.length);
     }
 }
