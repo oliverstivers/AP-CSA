@@ -5,8 +5,7 @@ import java.util.*;
 
 public class CombinationLockTester 
 {
-
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String[] args) throws FileNotFoundException{s
         ArrayList<String> words = new ArrayList<String>();
         File f = new File("commonwords.txt");
         Scanner scF = new Scanner(f);
@@ -60,9 +59,7 @@ public class CombinationLockTester
 				guessCounter++;
                 break;
                 
-			}
-            
-			
+			}			
 		}
     }
 		if(guess.equals("quit")){
@@ -73,10 +70,5 @@ public class CombinationLockTester
         }
         in.close();
         scF.close();
-        
-        
 	}
-    
-
-
 }
