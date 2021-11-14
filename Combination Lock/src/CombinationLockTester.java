@@ -7,31 +7,30 @@ public class CombinationLockTester
 {
 
 	public static void main(String[] args) throws FileNotFoundException{
+		//creates new ArrayList from commonwords.txt
         ArrayList<String> words = new ArrayList<String>();
         File f = new File("commonwords.txt");
         Scanner scF = new Scanner(f);
         while(scF.hasNext()){
             String line = scF.nextLine();
             Scanner scR = new Scanner(line);
-            while(scR.hasNext()){
+            while(scR.hasNext())
+            {
                 String word1 = scR.next();
                 words.add(word1);
             }
             scR.close();
         }
-        String[] wordList = new String[words.size()];
-        for(int i = 0; i < words.size(); i++){
-            wordList[i] = words.get(i);
-        }
+        
         
 		Scanner in = new Scanner(System.in);
         int guessCounter = 0;
-        
-		CombinationLock combo = new CombinationLock(wordList[WordGiver.giveRandom(wordList)]);
-        
+        //gives random number index 
+		CombinationLock combo = new CombinationLock(words.get(WordGiver.giveRandom(words)));
 		System.out.println("Enter your guess, or type 'quit' to cancel: ");
         String guess = in.nextLine();
         guessCounter ++;
+        //makes sure guess == 4 characters
         while(guess.length() != 4 && !guess.equals("quit"))
         {
             System.out.println("Guess must be 4 letters, please try again: ");
@@ -43,26 +42,23 @@ public class CombinationLockTester
         
 			while(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+") && !guess.equals("quit"))
             {
-			System.out.println("Guess is incorrect, please try again (quit to end): ");
-			guess = in.nextLine();
-            guessCounter++;
-            while(guess.length() != 4 && !guess.equals("quit"))
-            {
-                System.out.println("Guess must be 4 letters, please try again: ");
-                guess = in.nextLine();
-                
-            }
-            if(!guess.equals("quit")){
-            System.out.println(combo.getClue(guess));
-            }
-			else if(!(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+")) || guess.equals("quit"))
-            {
-				guessCounter++;
-                break;
-                
-			}
-            
-			
+				System.out.println("Guess is incorrect, please try again (quit to end): ");
+				guess = in.nextLine();
+	            guessCounter++;
+	            while(guess.length() != 4 && !guess.equals("quit"))
+	            {
+	                System.out.println("Guess must be 4 letters, please try again: ");
+	                guess = in.nextLine();
+	            }
+	            if(!guess.equals("quit"))
+	            {
+	            System.out.println(combo.getClue(guess));
+	            }
+				else if(!(combo.getClue(guess).contains("*") || combo.getClue(guess).contains("+")) || guess.equals("quit"))
+	            {
+					guessCounter++;
+	                break;
+	            }		
 		}
     }
 		if(guess.equals("quit")){
@@ -72,11 +68,6 @@ public class CombinationLockTester
             System.out.println("Good job! It took you " + guessCounter + " guesses.");
         }
         in.close();
-        scF.close();
-        
-        
+        scF.close();      
 	}
-    
-
-
 }
