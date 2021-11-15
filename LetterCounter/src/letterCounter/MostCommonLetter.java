@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class MostCommonLetter {
 
 	public static void main(String[] args) throws FileNotFoundException{
-		// TODO Auto-generated method stub
+		
 		
 		File f = new File("mobydick.txt");
 		Scanner in = new Scanner(f);
