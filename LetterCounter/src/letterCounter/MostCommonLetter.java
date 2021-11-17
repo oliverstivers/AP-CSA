@@ -2,7 +2,6 @@ package letterCounter;
 import java.io.FileNotFoundException;
 import java.io.File;
 import java.util.*;
-import java.lang.*;
 public class MostCommonLetter {
 
 	public static void main(String[] args) throws FileNotFoundException{
@@ -37,8 +36,12 @@ public class MostCommonLetter {
 		}
 		List<Map.Entry<String, Integer>> entry = new LinkedList<Map.Entry<String, Integer>>(letters.entrySet());
         Collections.sort(entry, (i1, i2) -> i1.getValue().compareTo(i2.getValue()));
+        List<Map.Entry<String, Integer>> reversed = new LinkedList<Map.Entry<String, Integer>>();
+        for(int i = entry.size() - 1; i >=0; i--){
+            reversed.add(entry.get(i));
+        }
         HashMap<String, Integer> sorted = new LinkedHashMap<String, Integer>();
-        for(Map.Entry<String, Integer> aa : entry){
+        for(Map.Entry<String, Integer> aa : reversed){
             sorted.put(aa.getKey(), aa.getValue());
         }
         sorted.forEach((key, value) -> {
