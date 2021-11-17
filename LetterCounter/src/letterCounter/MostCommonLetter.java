@@ -5,9 +5,9 @@ import java.util.*;
 public class MostCommonLetter {
 
 	public static void main(String[] args) throws FileNotFoundException{
-		
-		
-		File f = new File("harrypotter.txt");
+		Scanner user = new Scanner(System.in);
+		System.out.println("Enter a file path: ");
+		File f = new File(user.nextLine());
 		Scanner in = new Scanner(f);
 		ArrayList<String> list = new ArrayList<>();
 		while(in.hasNext()) {
@@ -49,6 +49,7 @@ public class MostCommonLetter {
         });
     
         in.close();
+        user.close();
 	}
     
 
