@@ -16,7 +16,7 @@ public class MostCommonLetter {
 			lineScanner.useDelimiter("");
 			while(lineScanner.hasNext()) {
 				String letter = lineScanner.next();
-				list.add(letter.toLowerCase());
+				list.add(letter.toUpperCase());
 
 			}
             lineScanner.close();
@@ -44,9 +44,41 @@ public class MostCommonLetter {
         for(Map.Entry<String, Integer> aa : reversed){
             sorted.put(aa.getKey(), aa.getValue());
         }
+        int minLetter = Integer.MAX_VALUE;
+        int maxLetter = Integer.MIN_VALUE;
+        String minLetterChar = "";
+        String maxLetterChar = "";
+        List<Integer> numList = new ArrayList<>();
+        List<String> charList = new ArrayList<>();
+        charList.add(minLetterChar);
+        charList.add(maxLetterChar);
+        numList.add(minLetter);
+        numList.add(maxLetter);
         sorted.forEach((key, value) -> {
-            System.out.println(key + " " + value);
+            if(value < numList.get(0)){
+                numList.set(0, value);
+                charList.set(0, key);
+            }
+            if(value > numList.get(1)){
+                numList.set(1, value);
+                charList.set(1, key);
+            }
         });
+        System.out.println("The least common letter in the text is " + charList.get(0) + " with " + numList.get(0) + " occurrences.");
+        System.out.println("The most common letter in the text is " + charList.get(1) + " with " + numList.get(1) + " occurrences.");
+        System.out.println("Would you like the see the full letter list? (y or n): ");
+        String answer = user.nextLine();
+        while(!(answer.equals("y") || answer.equals("n"))){
+            System.out.println("Symbol " + answer + " ot recognized, please try again: ");
+            answer = user.nextLine();
+        }
+        if(answer.toLowerCase().equals("y")){
+            sorted.forEach((key, value) -> {
+                System.out.println(key + ": " + value);
+            });
+        }
+        
+
     
         in.close();
         user.close();
