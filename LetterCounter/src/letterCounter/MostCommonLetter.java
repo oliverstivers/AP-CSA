@@ -9,14 +9,19 @@ public class MostCommonLetter {
 		System.out.println("Enter a file path: ");
 		File f = new File(user.nextLine());
 		Scanner in = new Scanner(f);
+        final int minOccurrences = 5;
 		ArrayList<String> list = new ArrayList<>();
 		while(in.hasNext()) {
 			String line = in.nextLine();
 			Scanner lineScanner = new Scanner(line);
-			lineScanner.useDelimiter("");
+			lineScanner.useDelimiter(" ");
 			while(lineScanner.hasNext()) {
 				String letter = lineScanner.next();
-				list.add(letter.toUpperCase());
+                letter = letter.replaceAll("[^a-zA-Z]", "");
+                if(!letter.equals("")){
+                    list.add(letter.toUpperCase());
+                }
+				
 
 			}
             lineScanner.close();
@@ -25,11 +30,11 @@ public class MostCommonLetter {
 		HashMap<String, Integer> letters = new HashMap<>();
 		for(int i = 0; i < list.size(); i++) {
             
-            String s = list.get(i);
-			if(!letters.containsKey(list.get(i)) && Character.isLetter(s.charAt(0))) {
+            
+			if(!letters.containsKey(list.get(i))) {
 				letters.put(list.get(i), 1);
 			}
-			else if(!list.get(i).equals(" ") && Character.isLetter(s.charAt(0))){
+			else if(!(list.get(i).equals(" ") || list.get(i).equals(""))){
 				Integer count = letters.get(list.get(i));
 				letters.replace(list.get(i), count + 1);
 			}
@@ -44,6 +49,7 @@ public class MostCommonLetter {
         for(Map.Entry<String, Integer> aa : reversed){
             sorted.put(aa.getKey(), aa.getValue());
         }
+        sorted.values().removeIf(val -> val < minOccurrences);
         int minLetter = Integer.MAX_VALUE;
         int maxLetter = Integer.MIN_VALUE;
         String minLetterChar = "";
@@ -64,6 +70,7 @@ public class MostCommonLetter {
                 charList.set(1, key);
             }
         });
+        
         System.out.println("The least common letter in the text is " + charList.get(0) + " with " + numList.get(0) + " occurrences.");
         System.out.println("The most common letter in the text is " + charList.get(1) + " with " + numList.get(1) + " occurrences.");
         System.out.println("Would you like the see the full letter list? (y or n): ");
