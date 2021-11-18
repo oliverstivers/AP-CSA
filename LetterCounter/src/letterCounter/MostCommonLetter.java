@@ -12,7 +12,6 @@ public class MostCommonLetter {
 		System.out.println("Enter a file path: ");
 		File f = new File(user.nextLine());
 		Scanner in = new Scanner(f);
-        final int minOccurrences = 5;
 		ArrayList<String> list = new ArrayList<>();
 		while(in.hasNext()) {
 			String line = in.nextLine();
@@ -20,6 +19,7 @@ public class MostCommonLetter {
 			lineScanner.useDelimiter("");
 			while(lineScanner.hasNext()) {
 				String letter = lineScanner.next();
+				System.out.println(letter);
                 letter = letter.replaceAll("[^a-zA-Z]", "");
                 if(!letter.equals("")){
                     list.add(letter.toUpperCase());
@@ -52,7 +52,7 @@ public class MostCommonLetter {
         for(Map.Entry<String, Integer> aa : reversed){
             sorted.put(aa.getKey(), aa.getValue());
         }
-        sorted.values().removeIf(val -> val < minOccurrences);
+        
         int minLetter = Integer.MAX_VALUE;
         int maxLetter = Integer.MIN_VALUE;
         String minLetterChar = "";
