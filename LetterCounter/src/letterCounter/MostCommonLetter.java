@@ -9,8 +9,8 @@ public class MostCommonLetter {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		Scanner user = new Scanner(System.in);
-		System.out.println("Enter a file path: ");
-		File f = new File(user.nextLine());
+//		System.out.println("Enter a file path: ");
+		File f = new File("harrypotter.txt");
 		Scanner in = new Scanner(f);
 		ArrayList<String> list = new ArrayList<>();
 		while(in.hasNext()) {
@@ -19,17 +19,18 @@ public class MostCommonLetter {
 			lineScanner.useDelimiter("");
 			while(lineScanner.hasNext()) {
 				String letter = lineScanner.next();
-				System.out.println(letter);
                 letter = letter.replaceAll("[^a-zA-Z]", "");
+              
                 if(!letter.equals("")){
                     list.add(letter.toUpperCase());
                 }
+                
 				
 
 			}
             lineScanner.close();
 		}
-		
+		System.out.println(list.size());
 		HashMap<String, Integer> letters = new HashMap<>();
 		for(int i = 0; i < list.size(); i++) {
             
