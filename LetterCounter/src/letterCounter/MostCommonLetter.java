@@ -123,13 +123,13 @@ public class MostCommonLetter {
             {
                 BufferedWriter bw = new BufferedWriter(
                 new FileWriter(csvPath + "\\" + csvName + ".csv"));
-                for(Map.Entry<String, Integer> line: sorted.entrySet())
+                for(Map.Entry<String, Integer> line: letters.entrySet())
                 {
                     bw.write(line.getKey() + "," + line.getValue());
                     bw.newLine();
                 }
-                BufferedWriter percent = new BufferedWriter(new FileWriter(csvPath + "\\" + csvName + "percents.csv"));
-                for(Map.Entry<String, Integer> percentLine: sorted.entrySet())
+                BufferedWriter percent = new BufferedWriter(new FileWriter(csvPath + "\\" + csvName + " percents.csv"));
+                for(Map.Entry<String, Integer> percentLine: letters.entrySet())
                 {
                     percent.write(percentLine.getKey() + "," + (double)percentLine.getValue() / list.size() * 100);
                     percent.newLine();
