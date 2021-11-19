@@ -28,17 +28,12 @@ public class MostCommonLetter {
                 {
                     list.add(letter.toUpperCase());
                 }
-                
-				
-
 			}
             lineScanner.close();
 		}
 		HashMap<String, Integer> letters = new HashMap<>();
 		for(int i = 0; i < list.size(); i++) 
-        {
-            
-            
+        {   
 			if(!letters.containsKey(list.get(i))) 
             {
 				letters.put(list.get(i), 1);
