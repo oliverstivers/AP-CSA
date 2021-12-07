@@ -12,16 +12,18 @@ public class PersonalityTestMethods{
             if(lineNumber % 2 == 0){
                 answers.add(line.nextLine());
                 lineNumber++;
+                
             }
             else if(lineNumber % 2 == 1){
                 names.add(line.nextLine());
                 lineNumber++;
+                
             }
         }
         line.close();
         }
         catch(FileNotFoundException f){
-
+        	System.out.println("file not found");
         }
         
         
