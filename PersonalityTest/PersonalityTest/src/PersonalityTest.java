@@ -5,7 +5,7 @@ public class PersonalityTest extends PersonalityTestMethods{
     public static void main(String[] args) throws FileNotFoundException {
          ArrayList<String> names = new ArrayList<>();
          ArrayList<String> answers = new ArrayList<>();
-         File f = new File("testFile.txt");
+         File f = new File("c:/users/olive/documents/github/ap-csa/personalitytest/personalitytest/testFile.txt");
          nameAndAnswerArray(names, answers, f);
          System.out.println(names);
          System.out.println(answers);
