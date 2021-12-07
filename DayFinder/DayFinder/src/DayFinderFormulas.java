@@ -47,14 +47,19 @@ public class DayFinderFormulas {
             System.out.println("year is 1700");
             added = true;
         }
-        else if(added != true && century == 2);{
+        else if(added != true && century == 2){
             total += 2;
             System.out.println("year is 1800");
         }
+        else if(century == 3){
+            System.out.println("year is 1900");
+        }
+        else{}
         
         int yearNum = year % 100;
         total += yearNum;
-        total += (yearNum / 4);
+        int leapYears = yearNum/4;
+        total += leapYears;
         int weekDay = total % 7;
         
         System.out.println(weekDay);
@@ -79,8 +84,5 @@ public class DayFinderFormulas {
         else if(weekDay == 6){
             System.out.println("Friday");
         }
-    }
-    public static void getCentury(){
-        
     }
 }
