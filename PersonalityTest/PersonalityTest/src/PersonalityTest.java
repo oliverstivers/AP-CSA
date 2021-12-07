@@ -7,5 +7,7 @@ public class PersonalityTest extends PersonalityTestMethods{
          ArrayList<String> answers = new ArrayList<>();
          File f = new File("testFile.txt");
          nameAndAnswerArray(names, answers, f);
+         System.out.println(names);
+         System.out.println(answers);
     }
 }
