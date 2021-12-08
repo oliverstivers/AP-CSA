@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
@@ -28,7 +29,7 @@ public class PersonalityTestMethods{
         
         
     }
-    public static String getPersonality(String answer){
+    public static String getPersonality(String answer, ArrayList<Integer> percentList){
         int bCounter = 0;
         int aCounter = 0;
         double bPercent;
@@ -47,7 +48,7 @@ public class PersonalityTestMethods{
         }
         
         bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
-        
+        percentList.add((int)(bPercent));
         
         if(bPercent == 50){
             personality +=("X");
@@ -76,7 +77,8 @@ public class PersonalityTestMethods{
                 aCounter++;
             }
         }
-          bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
+        bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
+        percentList.add((int)(bPercent));
         if(bPercent == 50){
             personality +=("X");
         }
@@ -103,7 +105,8 @@ public class PersonalityTestMethods{
                 aCounter++;
             }
         }
-          bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
+        bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
+        percentList.add((int)(bPercent));
         if(bPercent == 50){
             personality +=("X");
         }
@@ -131,7 +134,8 @@ public class PersonalityTestMethods{
                 aCounter++;
             }
         }
-          bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
+        bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
+        percentList.add((int)(bPercent));
         
         if(bPercent == 50){
             personality +=("X");
@@ -147,7 +151,13 @@ public class PersonalityTestMethods{
 
         return personality;
     }
-    
+    public static void introduce(){
+        System.out.println("This program processes a file of answers to the Keirsey Temperament Sorter. It converts the various A and B answers for each person into a sequence of B-percentages and then into a four-letter personality type.");
+        System.out.println();
+        
+               
+        
+    }
 
 
 }
