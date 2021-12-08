@@ -28,11 +28,11 @@ public class PersonalityTestMethods{
         
         
     }
-    public static ArrayList<String> getPersonality(String answer){
+    public static String getPersonality(String answer){
         int bCounter = 0;
         int aCounter = 0;
         double bPercent;
-        ArrayList<String> personality = new ArrayList<>();
+        String personality = "";
         //Introvert/Extrovert
         for(int i = 0; i < answer.length(); i+= 7){
             if(answer.substring(i, i + 1).toUpperCase().equals("B")){
@@ -45,18 +45,18 @@ public class PersonalityTestMethods{
             }
             else{}
         }
-        System.out.println(aCounter + " " + bCounter);
+        
         bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
-        System.out.println(bPercent);
+        
         
         if(bPercent == 50){
-            personality.add("X");
+            personality +=("X");
         }
         else if(bPercent < 50){
-            personality.add("E");
+            personality +=("E");
         }
         else if(bPercent > 50){
-            personality.add("I");
+            personality +=("I");
         }
         
         bCounter = 0;
@@ -78,13 +78,13 @@ public class PersonalityTestMethods{
         }
           bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
         if(bPercent == 50){
-            personality.add("X");
+            personality +=("X");
         }
         else if(bPercent < 50){
-            personality.add("S");
+            personality +=("S");
         }
         else if(bPercent > 50){
-            personality.add("N");
+            personality +=("N");
         }
         bCounter = 0;
         aCounter = 0;
@@ -105,13 +105,13 @@ public class PersonalityTestMethods{
         }
           bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
         if(bPercent == 50){
-            personality.add("X");
+            personality +=("X");
         }
         else if(bPercent < 50){
-            personality.add("T");
+            personality +=("T");
         }
         else if(bPercent > 50){
-            personality.add("F");
+            personality +=("F");
         }
         bCounter = 0;
         aCounter = 0;
@@ -132,15 +132,15 @@ public class PersonalityTestMethods{
             }
         }
           bPercent = bCounter / (double)((double)aCounter + (double)bCounter) * 100; 
-        System.out.println(bPercent);
+        
         if(bPercent == 50){
-            personality.add("X");
+            personality +=("X");
         }
         else if(bPercent < 50){
-            personality.add("J");
+            personality +=("J");
         }
         else if(bPercent > 50){
-            personality.add("P");
+            personality +=("P");
         }
         bCounter = 0;
         aCounter = 0;

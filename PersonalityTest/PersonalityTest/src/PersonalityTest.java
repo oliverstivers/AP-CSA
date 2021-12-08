@@ -9,7 +9,10 @@ public class PersonalityTest extends PersonalityTestMethods{
          nameAndAnswerArray(names, answers, f);
          System.out.println(names);
          System.out.println(answers);
-         ArrayList<String> personality = getPersonality(answers.get(0));
+         ArrayList<String> personality = new ArrayList<>();
+         for(int i = 0; i < names.size(); i++){
+            personality.add(getPersonality(answers.get(i)));
+         }
          System.out.println(personality);
     }
 }
