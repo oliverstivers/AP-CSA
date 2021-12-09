@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Combination Lock/src"/>
+	<classpathentry kind="src" path="DayFinder/DayFinder/src"/>
+	<classpathentry kind="src" path="Distance conversions/src"/>
+	<classpathentry kind="src" path="LetterCounter/src"/>
+	<classpathentry kind="src" path="PersonalityTest/PersonalityTest/src"/>
+	<classpathentry kind="src" path="pythagoras/src"/>
+	<classpathentry kind="output" path="Combination Lock/bin"/>
+</classpath>

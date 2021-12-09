@@ -1,4 +1,4 @@
-
+package DistanceConversions;
 public class Distance {
 	private double kilometers;
 

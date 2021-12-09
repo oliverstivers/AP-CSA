@@ -1,4 +1,4 @@
-
+package CombinationLock;
 public class CombinationLock {
 	private String combo;
     

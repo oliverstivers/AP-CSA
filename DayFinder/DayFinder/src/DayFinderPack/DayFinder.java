@@ -1,4 +1,6 @@
+package DayFinderPack;
 import java.util.Scanner;
+
 public class DayFinder extends DayFinderFormulas{
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);

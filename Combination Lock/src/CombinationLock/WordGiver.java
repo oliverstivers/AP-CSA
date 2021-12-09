@@ -1,3 +1,5 @@
+package CombinationLock;
+
 import java.util.*;
 public class WordGiver {
     public static int giveRandom(ArrayList<String> list) {

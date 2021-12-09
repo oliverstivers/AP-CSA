@@ -1,4 +1,4 @@
-
+package DayFinderPack;
 
 public class DayFinderFormulas {
     public static int total = 0;
