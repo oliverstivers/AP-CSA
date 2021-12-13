@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DayFinder",
+            "request": "launch",
+            "mainClass": "DayFinderPack.DayFinder",
+            "projectName": "DayFinder_5f35d508"
+        },
+        {
+            "type": "java",
             "name": "Attach",
             "request": "attach",
             "hostName": "localhost",
