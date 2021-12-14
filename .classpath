@@ -7,5 +7,6 @@
 	<classpathentry kind="src" path="LetterCounter/src"/>
 	<classpathentry kind="src" path="PersonalityTest/PersonalityTest/src"/>
 	<classpathentry kind="src" path="pythagoras/src"/>
+	<classpathentry kind="src" path="GuessingGame"/>
 	<classpathentry kind="output" path="Combination Lock/bin"/>
 </classpath>

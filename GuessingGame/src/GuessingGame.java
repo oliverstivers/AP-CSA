@@ -1,18 +1,22 @@
+package src;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class GuessingGame {
-	public static int totalGames = 0;
-	public static int totalGuesses = 0;
-	public static final int minNumber = 1;
-    public static final int maxNumber = 100;
-	public static int bestGame = Integer.MAX_VALUE;
+	private static int totalGames = 0;
+	private static int totalGuesses = 0;
+	private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 100;
+	private static int bestGame = Integer.MAX_VALUE;
+    private static int input = 0;
+    private static int guess;
 	public static void main(String[] args) {
 		
 		
 		Scanner in = new Scanner(System.in);
 		String option = "Y";
 		introduce();
-		while(option.substring(0,1).toUpperCase().equals("Y")) {
+		while(option.substring(0,1).equalsIgnoreCase("Y")) {
 			playOneGame();
 			System.out.println("Would you like to play another game? (y or n) ");
 			option = in.nextLine();
@@ -23,18 +27,19 @@ public class GuessingGame {
 	}
 	public static void introduce() {
 		System.out.println("This program allows you to play a guessing game. \nI will think of a number between "
-				+ minNumber + " and " + maxNumber + " and will allow you to guess until you get it. For each guess, I will tell you whether the right answer is higher or lower than your guess");
+				+ MIN_NUMBER + " and " + MAX_NUMBER + " and will allow you to guess until you get it. For each guess, I will tell you whether the right answer is higher or lower than your guess");
 	}
 	public static void playOneGame() {
 		
 		Scanner in = new Scanner(System.in);
 	    int guesses = 0;
 	    
-	    int number = (int)(Math.random() * maxNumber + minNumber);
-	    System.out.println("I'm thinking of a number between " + minNumber + " and " + maxNumber + "...");
+	    int number = (int)(Math.random() * MAX_NUMBER + MIN_NUMBER);
+	    System.out.println("I'm thinking of a number between " + MIN_NUMBER + " and " + MAX_NUMBER + "...");
         System.out.println(number);
 	    System.out.println("Your guess? ");
-	    int guess = validInput();
+	    validInput();
+        guess = input;
 	    guesses++;
 	    while(guess != number) {
 	    	if(guess > number) {
@@ -51,7 +56,8 @@ public class GuessingGame {
 	    		
 	    	}
 	    	System.out.println("Your guess?");
-	    	guess = validInput();
+	    	validInput();
+            guess = input;
 	    	
 	    }
 	    if(guesses == 1) {
@@ -75,18 +81,18 @@ public class GuessingGame {
 		System.out.println("guesses/game = " + (double)((double)totalGuesses / (double)totalGames ));
 		System.out.println("Best game = " + bestGame);
 	}
-	public static int validInput(){
+	public static void validInput(){
         Scanner in = new Scanner(System.in);
-        int input = 0;
         try{
-            return in.nextInt();  
+            input = in.nextInt();  
         }
         catch(InputMismatchException e){
             System.out.println("Invalid data type, please try again: ");
             validInput();
+            
         }
-        System.out.println(input);
-        return input;
+        
+        
         
         
        
