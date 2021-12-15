@@ -2,6 +2,7 @@
     "java.project.sourcePaths": [
         "DayFinder/DayFinder/src",
         "DayFinder",
+        "src"
     ]
     
 }
