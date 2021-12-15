@@ -15,6 +15,7 @@ public class GuessingGame {
 	private static int guess;
 	private static Scanner guessScanner = new Scanner(System.in);
 	
+	
 	public static void main(String[] args) {
 		
 		
@@ -22,7 +23,7 @@ public class GuessingGame {
 		String option = "Y";
 		introduce();
 		//while user keeps answering 'yes'
-		while(option.substring(0,1).equalsIgnoreCase("Y")) {
+		while(option.toUpperCase().startsWith("Y")) {
 			playOneGame();
 			System.out.println("Would you like to play another game? (y or n) ");
 			option = in.nextLine();
