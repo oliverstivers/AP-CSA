@@ -5,7 +5,7 @@ public class DayFinderFormulas {
     public static void getDay(int day, int month, int year){
         
         total += day;
-        System.out.println("Day " + day + " month " + month + " year " + year);
+       
         
         if(month == 1 || month == 10){
             total += 1;
@@ -38,18 +38,18 @@ public class DayFinderFormulas {
         boolean added = false;
         if(century == 0 && added == false){
             total += 6;
-            System.out.println("year is 2000");
+            
             added = true;
-            System.out.println(added);
+           
         }
         else if(century == 1 && added == false){
             total += 4;
-            System.out.println("year is 1700");
+            
             added = true;
         }
         else if(added != true && century == 2){
             total += 2;
-            System.out.println("year is 1800");
+            
         }
         else if(century == 3){
             System.out.println("year is 1900");
@@ -62,7 +62,7 @@ public class DayFinderFormulas {
         total += leapYears;
         int weekDay = total % 7;
         
-        System.out.println(weekDay);
+        
         if(weekDay == 0){
             System.out.println("Saturday");
         }
