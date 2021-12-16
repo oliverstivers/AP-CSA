@@ -93,7 +93,7 @@ public class GuessingGame {
 		System.out.println("Best game = " + bestGame);
 	}
 	private static void validInput()
-    {     
+    {   //while user inputs non ints
         while (!guessScanner.hasNextInt()) 
         {
             System.out.println("Invalid data, try again");
