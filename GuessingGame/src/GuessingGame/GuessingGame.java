@@ -1,4 +1,5 @@
 package src.GuessingGame;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class GuessingGame {
 	//constants
@@ -97,14 +98,14 @@ public class GuessingGame {
 	private static void validInput(){
         
         try{
-			//tries to set guess to nextInt
-            guess = Integer.parseInt(guessScanner.nextLine());  
+			//tries to set guess to next int
+            guess = guessScanner.nextInt(); 
         }
 		
 		//if user doesn't input int
-        catch(NumberFormatException e){
+        catch(InputMismatchException e){
             System.out.println("Invalid data type, please try again: ");
-			
+			guessScanner.next();
             validInput();
             
         }
