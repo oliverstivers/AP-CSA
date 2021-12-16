@@ -1,5 +1,4 @@
 package src.GuessingGame;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 public class GuessingGame {
 	//constants
@@ -50,7 +49,7 @@ public class GuessingGame {
 	    int number = (int)(Math.random() * MAX_NUMBER + MIN_NUMBER);
 	    System.out.println("I'm thinking of a number between " + MIN_NUMBER + " and " + MAX_NUMBER + "...");
 		System.out.println(number);
-	    System.out.println("Your guess? ");
+	    System.out.print("Your guess? ");
 	    validInput();
 	    guesses++;
 		//while user guesses wrong
@@ -69,8 +68,8 @@ public class GuessingGame {
 	    		break;
 	    		
 	    	}
-	    	System.out.println("Your guess?");
-	    	validInput();	
+	    	System.out.print("Your guess? ");
+	    	validInput();
 	    }
 	    if(guesses == 1) {
 	    	System.out.println("You got it right in " + guesses + " guess");
@@ -97,18 +96,11 @@ public class GuessingGame {
 	}
 	private static void validInput(){
         
-        try{
-			//tries to set guess to next int
-            guess = guessScanner.nextInt(); 
+        while (!guessScanner.hasNextInt()) {
+            System.out.println("Invalid data, try again");
+            guessScanner.next();
         }
-		
-		//if user doesn't input int
-        catch(InputMismatchException e){
-            System.out.println("Invalid data type, please try again: ");
-			guessScanner.next();
-            validInput();
-            
-        }
+        guess = guessScanner.nextInt();
 		
         
         
