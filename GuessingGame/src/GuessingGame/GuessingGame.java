@@ -26,6 +26,7 @@ public class GuessingGame {
 		}
 		printResults();
         in.close();
+		guessScanner.close();
 	}
 	private static void introduce() 
     {
@@ -80,7 +81,7 @@ public class GuessingGame {
 	    	bestGame = guesses;
 	    }
 		
-		guessScanner.close();
+		
 
 	    
 	}
