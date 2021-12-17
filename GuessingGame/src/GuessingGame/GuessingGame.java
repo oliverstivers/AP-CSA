@@ -41,7 +41,6 @@ public class GuessingGame {
 	    //generates random number
 	    int number = (int)(Math.random() * MAX_NUMBER + MIN_NUMBER);
 	    System.out.println("I'm thinking of a number between " + MIN_NUMBER + " and " + MAX_NUMBER + "...");
-		System.out.println(number);
 	    System.out.print("Your guess? ");
 	    validInput();
 	    guesses++;
