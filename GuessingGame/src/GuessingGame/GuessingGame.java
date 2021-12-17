@@ -11,18 +11,20 @@ public class GuessingGame {
     private static int guesses;
     
 	private static int guess;
+	
 	private static Scanner guessScanner = new Scanner(System.in);
 	private static Scanner in = new Scanner(System.in);
+	private static String option = "Y";
 	public static void main(String[] args) 
     {
-    	String option = "Y";
+    	
 		introduce();
 		//while user keeps answering 'yes'
 		while(option.toUpperCase().startsWith("Y"))
-         {
+        {
 			playOneGame();
 			System.out.println("Would you like to play another game? (y or n) ");
-			option = in.nextLine();
+			validAnswer();
 		}
 		printResults();
         in.close();
@@ -103,4 +105,33 @@ public class GuessingGame {
         guess = guessScanner.nextInt();      
        
     }
+	private static void validAnswer(){
+		option = in.nextLine();
+		if(option.toUpperCase().startsWith("Y")){
+			return;
+		}
+		else if(option.toUpperCase().startsWith("N")){
+			return;
+		}
+		else{
+			System.out.println("Invalid answer, please try again: ");
+			option = in.nextLine();
+			if(option.toUpperCase().startsWith("Y")){
+				return;
+			}
+			else if(option.toUpperCase().startsWith("N")){
+				return;
+			}
+			while(!option.toUpperCase().startsWith("Y") || !option.toUpperCase().startsWith("N")){
+				System.out.println("Invalid answer, please try again: ");
+				option = in.nextLine();
+				if(option.toUpperCase().startsWith("Y")){
+					return;
+				}
+				else if(option.toUpperCase().startsWith("N")){
+					return;
+				}
+			}
+		}
+	}
 }
