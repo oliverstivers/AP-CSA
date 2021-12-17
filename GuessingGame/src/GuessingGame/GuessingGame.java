@@ -23,7 +23,13 @@ public class GuessingGame {
 		while(option.toUpperCase().startsWith("Y"))
         {
 			playOneGame();
-			System.out.println("Would you like to play another game? (y or n) ");
+			if(totalGames == 1){
+				System.out.println("You have played " + totalGames + " game so far. Would you like to play another game? (y or n) ");
+			}
+			else{
+				System.out.println("You have played " + totalGames + " games so far. Would you like to play another game? (y or n) ");
+			}
+			
 			validAnswer();
 		}
 		printResults();
