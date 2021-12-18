@@ -112,28 +112,19 @@ public class GuessingGame {
     }
 	private static void validAnswer(){
 		option = in.nextLine();
-		if(option.toUpperCase().startsWith("Y")){
-			return;
-		}
-		else if(option.toUpperCase().startsWith("N")){
+		if(option.toUpperCase().startsWith("Y") || option.toUpperCase().startsWith("N")){
 			return;
 		}
 		else{
 			System.out.println("Invalid answer, please try again: ");
 			option = in.nextLine();
-			if(option.toUpperCase().startsWith("Y")){
-				return;
+			if(option.toUpperCase().startsWith("Y") || option.toUpperCase().startsWith("N")){
+					return;
 			}
-			else if(option.toUpperCase().startsWith("N")){
-				return;
-			}
-			while(!option.toUpperCase().startsWith("Y") || !option.toUpperCase().startsWith("N")){
+			while(!(option.toUpperCase().startsWith("Y") && option.toUpperCase().startsWith("N"))){
 				System.out.println("Invalid answer, please try again: ");
 				option = in.nextLine();
-				if(option.toUpperCase().startsWith("Y")){
-					return;
-				}
-				else if(option.toUpperCase().startsWith("N")){
+				if(option.toUpperCase().startsWith("Y") || option.toUpperCase().startsWith("N")){
 					return;
 				}
 			}
