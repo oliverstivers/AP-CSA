@@ -107,7 +107,11 @@ public class GuessingGame {
             System.out.println("Invalid data, try again");
             guessScanner.next();
         }
-        guess = guessScanner.nextInt();      
+        guess = guessScanner.nextInt(); 
+		while(guess > MAX_NUMBER || guess < MIN_NUMBER){
+			System.out.println("Guess out of range, try again: ");
+			validInput();
+		}     
        
     }
 	private static void validAnswer(){
