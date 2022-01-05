@@ -1,3 +1,5 @@
+package src.TicTacToe;
+
 import java.util.Scanner;
 
 public class Game
@@ -14,6 +16,7 @@ public class Game
         while(board.checkWin() == false){
             
             System.out.println("Enter column, then row: ");
+            
             int col = in.nextInt();
             int row = in.nextInt();
             if(!board.pickLocation(row, col)){
