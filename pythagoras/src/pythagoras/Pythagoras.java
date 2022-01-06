@@ -6,10 +6,6 @@ public class Pythagoras {
 		
 		Scanner in = new Scanner(System.in);
 		String choice  = "";
-		//hello there
-		/**
-		 * javadoc comment
-		 */
 		
 		
 		while(!(choice.equals("H") && choice.equals("L"))) {

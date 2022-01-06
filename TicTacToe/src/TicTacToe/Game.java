@@ -1,5 +1,4 @@
 package src.TicTacToe;
-
 import java.util.Scanner;
 
 public class Game
