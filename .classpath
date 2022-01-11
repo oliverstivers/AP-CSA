@@ -9,5 +9,6 @@
 	<classpathentry kind="src" path="pythagoras/src"/>
 	<classpathentry kind="src" path="GuessingGame"/>
 	<classpathentry kind="src" path="TicTacToe"/>
+	<classpathentry kind="src" path="Pythagoras"/>
 	<classpathentry kind="output" path="Combination Lock/bin"/>
 </classpath>
