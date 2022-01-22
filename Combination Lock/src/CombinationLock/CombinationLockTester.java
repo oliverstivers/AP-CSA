@@ -10,7 +10,7 @@ public class CombinationLockTester
 
 	public static void main(String[] args) throws FileNotFoundException{
         ArrayList<String> words = new ArrayList<String>();
-        File f = new File("Combination Lock\\commonwords.txt");
+        File f = new File("C:/Users/olive/Documents/GitHub/AP-CSA/Combination Lock/commonwords.txt");
         Scanner scF = new Scanner(f);
         while(scF.hasNext()){
             String line = scF.nextLine();
