@@ -1,6 +1,7 @@
-package src.GuessingGame;
+
 import java.util.Scanner;
 public class GuessingGame {
+
 	//constants
 	private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 100;
