@@ -59,7 +59,7 @@ public class MyFrame extends JFrame implements ActionListener{
         convert.addActionListener(this);
         
         
-        String[] currency = {"yen", "euro", "pound", "CAD", "usd"};
+        String[] currency = {"Yen", "Euro", "Pound", "CAD", "USD"};
         from = new JComboBox<>(currency);
         
         to = new JComboBox<>(currency);
@@ -118,7 +118,25 @@ public class MyFrame extends JFrame implements ActionListener{
             double converted = Converter.convert(from.getSelectedItem().toString().toUpperCase(),
             to.getSelectedItem().toString().toUpperCase(), Double.parseDouble(textField.getText())
             );
-            label3.setText("" + converted + " " + to.getSelectedItem().toString());
+            String output = "" + converted;
+            switch(to.getSelectedItem().toString().toUpperCase()){
+                case "EURO":
+                    output = "€" + output;
+                    break;
+                case "YEN": 
+                    output = "¥" + output;
+                    break;
+                case "USD":
+                    output = "$" + output;
+                    break;
+                case "POUND":
+                    output = "£" + output;
+                    break;
+                case "CAD":
+                    output = "CAD$" + output;
+                    break;
+            }
+            label3.setText(output);
         }
     } 
 }
