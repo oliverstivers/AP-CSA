@@ -3,11 +3,11 @@ import java.util.HashMap;
 public class Converter {
     private static HashMap<String, Double> rates = new HashMap<>(){
         {
-        put("EURO", 0.95);
-        put("YEN", 128.23);
-        put("CAD", 1.28);
-        put("POUND", 0.81);
-        put("USD", 1.0);
+            put("EURO", 0.95);
+            put("YEN", 128.23);
+            put("CAD", 1.28);
+            put("POUND", 0.81);
+            put("USD", 1.0);
         }
     };
     

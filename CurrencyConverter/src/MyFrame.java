@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
+
 import java.awt.Font;
 
 import javax.swing.*;
@@ -12,7 +12,9 @@ import java.awt.GridBagConstraints;
 public class MyFrame extends JFrame implements ActionListener{
     JTextField textField;
     JButton convert;
+    @SuppressWarnings("rawtypes")
     JComboBox from;
+    @SuppressWarnings("rawtypes")
     JComboBox to;
     JLabel label3;
     GridBagConstraints gbc = new GridBagConstraints();
@@ -24,7 +26,7 @@ public class MyFrame extends JFrame implements ActionListener{
         this.getContentPane().revalidate();
         this.getContentPane().repaint();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBackground(new Color(49, 50, 51));
+        
         this.setTitle("Currency Converter");
         this.setResizable(false);
         ImageIcon image = new ImageIcon("src/money.png");
@@ -60,9 +62,9 @@ public class MyFrame extends JFrame implements ActionListener{
         
         
         String[] currency = {"Yen", "Euro", "Pound", "CAD", "USD"};
-        from = new JComboBox<>(currency);
+        from = new JComboBox<String>(currency);
         
-        to = new JComboBox<>(currency);
+        to = new JComboBox<String>(currency);
         convert.setSize(100, 40);
         
         JLabel label2 = new JLabel();
@@ -107,11 +109,7 @@ public class MyFrame extends JFrame implements ActionListener{
         mainContainer.setBackground(new Color(49, 50, 51));
         this.pack();
         this.setSize(800, 500);
-        
-        
-
-        
-    }   
+    }  
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == convert){
