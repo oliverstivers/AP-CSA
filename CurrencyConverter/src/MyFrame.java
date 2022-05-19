@@ -101,10 +101,13 @@ public class MyFrame extends JFrame implements ActionListener{
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridwidth = 5;
+        gbc.gridwidth = 4;
         p2.add(convert, gbc);
         gbc.fill = GridBagConstraints.NONE;
         gbc.gridwidth = 1;
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        p2.add(label3, gbc);
         gbc.gridx = 0;
         gbc.gridy = 0;
         this.add(p1, gbc);
