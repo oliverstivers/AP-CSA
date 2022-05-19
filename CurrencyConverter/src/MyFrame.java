@@ -23,7 +23,7 @@ public class MyFrame extends JFrame implements ActionListener{
     GridBagConstraints gbc = new GridBagConstraints();
     MyFrame(){
         
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        this.setLayout(new GridBagLayout());
         this.setSize(800, 500); 
         this.setVisible(true);
         this.getContentPane().revalidate();
@@ -85,41 +85,33 @@ public class MyFrame extends JFrame implements ActionListener{
         p1.setBackground(new Color(49, 50, 51));
         p1.setLayout(new GridBagLayout());
         
-        this.add(label, gbc);
-        this.add(Box.createRigidArea(new Dimension(50, 300)));
-        label.setAlignmentY(Component.TOP_ALIGNMENT);
-        
+       JPanel p2 = new JPanel();
+        p2.setBackground(new Color(49, 50, 51));
+        p2.setLayout(new GridBagLayout());
 
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(50, 0, 0 , 15);
-        p1.add(textField, gbc);
-        gbc.insets = new Insets(0, 0, 0 , 0);
-        gbc.fill = GridBagConstraints.NONE;
+        p1.add(label, gbc);
+        p2.add(textField, gbc);
         gbc.gridx = 1;
-        gbc.gridy = 1;
-        
-        
-        p1.add(from, gbc);
+        gbc.gridy = 0;
+        p2.add(from, gbc);
         gbc.gridx = 2;
-        gbc.gridy = 1;
-        p1.add(label2, gbc);
+        p2.add(label2, gbc);
         gbc.gridx = 3;
-        gbc.gridy = 1;
-        p1.add(to, gbc);
+        p2.add(to, gbc);
         gbc.gridx = 0;
-        gbc.gridy = 3;
-        gbc.gridwidth = 3;
+        gbc.gridy = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        p1.add(convert, gbc);
+        gbc.gridwidth = 5;
+        p2.add(convert, gbc);
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.gridwidth = 1;
         gbc.gridx = 0;
-        gbc.gridy = 4;
-        p1.add(label3, gbc);
-        Container mainContainer = this.getContentPane();
-        mainContainer.setBackground(new Color(49, 50, 51));
-        this.add(p1);
+        gbc.gridy = 0;
+        this.add(p1, gbc);
+        gbc.gridy = 1;
+        this.add(p2, gbc);
+        this.getContentPane().setBackground(new Color(49, 50, 51));
+        
         this.pack();
         this.setSize(800, 500);
     }  
