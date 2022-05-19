@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 
@@ -8,7 +9,9 @@ import javax.swing.*;
 
 import java.awt.event.*;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.GridBagConstraints;
+import java.awt.FlowLayout;
 public class MyFrame extends JFrame implements ActionListener{
     JTextField textField;
     JButton convert;
@@ -20,7 +23,7 @@ public class MyFrame extends JFrame implements ActionListener{
     GridBagConstraints gbc = new GridBagConstraints();
     MyFrame(){
         
-        this.setLayout(new GridBagLayout());
+        this.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         this.setSize(800, 500); 
         this.setVisible(true);
         this.getContentPane().revalidate();
@@ -65,6 +68,7 @@ public class MyFrame extends JFrame implements ActionListener{
         from = new JComboBox<String>(currency);
         
         to = new JComboBox<String>(currency);
+        
         convert.setSize(100, 40);
         
         JLabel label2 = new JLabel();
@@ -77,36 +81,45 @@ public class MyFrame extends JFrame implements ActionListener{
         label3.setForeground(new Color(255, 255, 255));
         gbc.gridx = 0;
         gbc.gridy = 0;
+        JPanel p1 = new JPanel();
+        p1.setBackground(new Color(49, 50, 51));
+        p1.setLayout(new GridBagLayout());
         
         this.add(label, gbc);
-        
+        this.add(Box.createRigidArea(new Dimension(50, 300)));
+        label.setAlignmentY(Component.TOP_ALIGNMENT);
         
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        this.add(textField, gbc);
         
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(50, 0, 0 , 15);
+        p1.add(textField, gbc);
+        gbc.insets = new Insets(0, 0, 0 , 0);
+        gbc.fill = GridBagConstraints.NONE;
         gbc.gridx = 1;
         gbc.gridy = 1;
         
         
-        this.add(from, gbc);
+        p1.add(from, gbc);
         gbc.gridx = 2;
         gbc.gridy = 1;
-        this.add(label2, gbc);
+        p1.add(label2, gbc);
         gbc.gridx = 3;
         gbc.gridy = 1;
-        this.add(to, gbc);
+        p1.add(to, gbc);
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 3;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        this.add(convert, gbc);
+        p1.add(convert, gbc);
         gbc.gridx = 0;
         gbc.gridy = 4;
-        this.add(label3, gbc);
+        p1.add(label3, gbc);
         Container mainContainer = this.getContentPane();
         mainContainer.setBackground(new Color(49, 50, 51));
+        this.add(p1);
         this.pack();
         this.setSize(800, 500);
     }  
