@@ -44,7 +44,7 @@ public class MyFrame extends JFrame implements ActionListener{
         
         
         textField = new JTextField();
-        textField.setPreferredSize(new Dimension(250, 40));
+        textField.setPreferredSize(new Dimension(150, 30));
         textField.setText("start amount");
         textField.addFocusListener(new java.awt.event.FocusAdapter() {
         public void focusGained(java.awt.event.FocusEvent evt) {
@@ -55,10 +55,10 @@ public class MyFrame extends JFrame implements ActionListener{
 
         });
         textField.setFont(new Font("Roboto", Font.PLAIN, 18));
-        textField.setBackground(new Color(145, 148, 150));
+        textField.setBackground(new Color(49, 50, 51));
         textField.setForeground(Color.white);
         textField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        
+        textField.setCaretColor(Color.white);
 
         convert = new JButton("Convert");
         convert.addActionListener(this);
@@ -88,26 +88,41 @@ public class MyFrame extends JFrame implements ActionListener{
        JPanel p2 = new JPanel();
         p2.setBackground(new Color(49, 50, 51));
         p2.setLayout(new GridBagLayout());
+        gbc.insets = new Insets(0, 10, 10, 10);
+        gbc.anchor = GridBagConstraints.PAGE_START;
+        
 
         p1.add(label, gbc);
+        gbc.insets = new Insets(50, 10, 10, 10);
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.ipady = 0;
         p2.add(textField, gbc);
         gbc.gridx = 1;
         gbc.gridy = 0;
         p2.add(from, gbc);
         gbc.gridx = 2;
+        gbc.insets = new Insets(50, 5, 10, 5);
         p2.add(label2, gbc);
         gbc.gridx = 3;
+        gbc.insets = new Insets(50, 10, 10, 0);
         p2.add(to, gbc);
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridwidth = 4;
+        gbc.ipady = 40;
+        gbc.insets = new Insets(0, 0, 10, 0);
         p2.add(convert, gbc);
+        gbc.insets = new Insets(10, 0, 10, 0);
         gbc.fill = GridBagConstraints.NONE;
+        gbc.ipady = 0;
+        gbc.ipadx = 0;
         gbc.gridwidth = 1;
         gbc.gridx = 0;
         gbc.gridy = 3;
+        gbc.anchor = GridBagConstraints.LINE_START;
         p2.add(label3, gbc);
+        gbc.anchor = GridBagConstraints.CENTER;
         gbc.gridx = 0;
         gbc.gridy = 0;
         this.add(p1, gbc);
