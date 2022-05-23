@@ -16,6 +16,18 @@ public class Converter {
         double result = (double)(Math.round(dollarAmt * rates.get(end.toUpperCase()) * 100.00) / 100.00);
         return result;
     }
+    public static void update(){
+        
+        while (true) {
+            try {
+                Thread.sleep(60 * 1000);
+            }
+            catch (InterruptedException ie) {
+                ie.printStackTrace();
+            }
+            
+        }
+    }
     
     
     

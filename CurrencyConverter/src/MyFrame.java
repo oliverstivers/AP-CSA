@@ -1,6 +1,6 @@
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
+
+
 import java.awt.Dimension;
 
 import java.awt.Font;
@@ -11,7 +11,7 @@ import java.awt.event.*;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
-import java.awt.FlowLayout;
+
 public class MyFrame extends JFrame implements ActionListener{
     JTextField textField;
     JButton convert;
@@ -24,7 +24,7 @@ public class MyFrame extends JFrame implements ActionListener{
     MyFrame(){
         
         this.setLayout(new GridBagLayout());
-        this.setSize(800, 500); 
+        this.setSize(800, 350); 
         this.setVisible(true);
         this.getContentPane().revalidate();
         this.getContentPane().repaint();
@@ -39,7 +39,7 @@ public class MyFrame extends JFrame implements ActionListener{
         JLabel label = new JLabel();
         label.setForeground(new Color(255, 255, 255));
         label.setFont(new Font("Roboto", Font.PLAIN, 20));
-        label.setSize(300, 300);
+        label.setSize(300, 5);
         label.setText("Welcome to the currency converter!");
         
         
@@ -101,7 +101,7 @@ public class MyFrame extends JFrame implements ActionListener{
         gbc.gridy = 0;
         p2.add(from, gbc);
         gbc.gridx = 2;
-        gbc.insets = new Insets(50, 5, 10, 5);
+        gbc.insets = new Insets(50, 0, 10, 0);
         p2.add(label2, gbc);
         gbc.gridx = 3;
         gbc.insets = new Insets(50, 10, 10, 0);
@@ -111,9 +111,9 @@ public class MyFrame extends JFrame implements ActionListener{
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridwidth = 4;
         gbc.ipady = 40;
-        gbc.insets = new Insets(0, 0, 10, 0);
+        gbc.insets = new Insets(0, 0, 0, 0);
         p2.add(convert, gbc);
-        gbc.insets = new Insets(10, 0, 10, 0);
+        gbc.insets = new Insets(10, 0, 0, 0);
         gbc.fill = GridBagConstraints.NONE;
         gbc.ipady = 0;
         gbc.ipadx = 0;
@@ -131,7 +131,7 @@ public class MyFrame extends JFrame implements ActionListener{
         this.getContentPane().setBackground(new Color(49, 50, 51));
         
         this.pack();
-        this.setSize(800, 500);
+        this.setSize(550, 350);
     }  
     @Override
     public void actionPerformed(ActionEvent e){
