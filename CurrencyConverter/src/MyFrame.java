@@ -8,6 +8,7 @@ import java.awt.Font;
 import javax.swing.*;
 
 import java.awt.event.*;
+import java.io.IOException;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
@@ -24,7 +25,7 @@ public class MyFrame extends JFrame implements ActionListener{
     MyFrame(){
         
         this.setLayout(new GridBagLayout());
-        this.setSize(800, 350); 
+        this.setSize(475, 350); 
         this.setVisible(true);
         this.getContentPane().revalidate();
         this.getContentPane().repaint();
@@ -64,7 +65,7 @@ public class MyFrame extends JFrame implements ActionListener{
         convert.addActionListener(this);
         
         
-        String[] currency = {"Yen", "Euro", "Pound", "CAD", "USD"};
+        String[] currency = {"JPY", "EUR", "GBP", "CAD", "USD"};
         from = new JComboBox<String>(currency);
         
         to = new JComboBox<String>(currency);
@@ -131,26 +132,32 @@ public class MyFrame extends JFrame implements ActionListener{
         this.getContentPane().setBackground(new Color(49, 50, 51));
         
         this.pack();
-        this.setSize(550, 350);
+        this.setSize(475, 350);
     }  
     @Override
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e) {
         if(e.getSource() == convert){
-            double converted = Converter.convert(from.getSelectedItem().toString().toUpperCase(),
-            to.getSelectedItem().toString().toUpperCase(), Double.parseDouble(textField.getText())
-            );
+            double converted = 0;
+            try {
+                converted = Converter.convert(from.getSelectedItem().toString().toUpperCase(),
+                to.getSelectedItem().toString().toUpperCase(), Double.parseDouble(textField.getText())
+                );
+            } catch (NumberFormatException | IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
             String output = "" + converted;
             switch(to.getSelectedItem().toString().toUpperCase()){
-                case "EURO":
+                case "EUR":
                     output = "€" + output;
                     break;
-                case "YEN": 
+                case "JPY": 
                     output = "¥" + output;
                     break;
                 case "USD":
                     output = "$" + output;
                     break;
-                case "POUND":
+                case "GBP":
                     output = "£" + output;
                     break;
                 case "CAD":
